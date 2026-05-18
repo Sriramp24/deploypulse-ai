@@ -1,0 +1,60 @@
+body{
+    margin:0;
+    font-family:Arial;
+    display:flex;
+    background:#111827;
+    color:white;
+}
+
+.sidebar{
+    width:250px;
+    background:#1f2937;
+    height:100vh;
+    padding:20px;
+}
+
+.sidebar h2{
+    margin-bottom:40px;
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:0;
+}
+
+.sidebar li{
+    padding:15px;
+    margin-bottom:10px;
+    background:#374151;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.sidebar li:hover{
+    background:#4b5563;
+}
+
+.main{
+    flex:1;
+    padding:30px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:#374151;
+    padding:20px;
+    border-radius:10px;
+    width:200px;
+}
+
+.logs{
+    margin-top:20px;
+    background:#1f2937;
+    padding:20px;
+    border-radius:10px;
+}
