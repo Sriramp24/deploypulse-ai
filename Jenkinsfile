@@ -2,24 +2,19 @@ pipeline {
 
     agent any
 
+    environment {
+
+        DOCKER_PATH = "/usr/local/bin/docker"
+
+    }
+
     stages {
-
-        stage('Clone Repository') {
-
-            steps {
-
-                git branch: 'main',
-                url: 'https://github.com/Sriramp24/deploypulse-ai.git'
-
-            }
-
-        }
 
         stage('Build Docker Image') {
 
             steps {
 
-                sh 'docker build -t deploypulse-backend ./backend'
+                sh '${DOCKER_PATH} build -t deploypulse-backend ./backend'
 
             }
 
@@ -29,8 +24,8 @@ pipeline {
 
             steps {
 
-                sh 'docker stop deploypulse || true'
-                sh 'docker rm deploypulse || true'
+                sh '${DOCKER_PATH} stop deploypulse || true'
+                sh '${DOCKER_PATH} rm deploypulse || true'
 
             }
 
@@ -40,7 +35,7 @@ pipeline {
 
             steps {
 
-                sh 'docker run -d --name deploypulse -p 3000:3000 deploypulse-backend'
+                sh '${DOCKER_PATH} run -d --name deploypulse -p 3000:3000 deploypulse-backend'
 
             }
 
