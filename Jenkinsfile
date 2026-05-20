@@ -35,7 +35,7 @@ pipeline {
 
             steps {
 
-                sh '${DOCKER_PATH} run -d --name deploypulse -p 3000:3000 deploypulse-backend'
+                sh '${DOCKER_PATH} run -d --name deploypulse -p 3002:3000 deploypulse-backend'
 
             }
 
