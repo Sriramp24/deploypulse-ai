@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>DeployPulse AI</title>
+    <title>DeployPulse AI/ Auto CI/CD</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -25,6 +25,14 @@
 
         <li onclick="showPage('logs')">Logs</li>
 
+        <li>
+            <a href="http://localhost:3001"
+               target="_blank"
+               style="color:white;text-decoration:none;">
+               Grafana Dashboard
+            </a>
+        </li>
+
     </ul>
 
 </div>
@@ -33,69 +41,57 @@
 
     <div id="dashboard" class="page">
 
-        <h1>Dashboard</h1>
+        <h1>DeployPulse AI Dashboard</h1>
 
         <div class="cards">
 
-            <div class="card">
-                Running Containers: 4
+            <div class="card" id="cpu">
+                Loading CPU...
             </div>
 
-            <div class="card">
-                Failed Builds: 1
+            <div class="card" id="ram">
+                Loading RAM...
             </div>
 
-            <div class="card">
-                CPU Usage: 45%
+            <div class="card" id="disk">
+                Loading Disk...
             </div>
 
         </div>
 
     </div>
 
-    <div id="containers" class="page" style="display:none;">
+    <div id="containers"
+         class="page"
+         style="display:none;">
 
-        <h1>Containers</h1>
+        <h1>Docker Containers</h1>
 
-        <div class="logs">
-
-            <p>Container 1 : Running</p>
-
-            <p>Container 2 : Running</p>
-
-            <p>Container 3 : Stopped</p>
+        <div class="cards" id="containerList">
 
         </div>
 
     </div>
 
-    <div id="jenkins" class="page" style="display:none;">
+    <div id="jenkins"
+         class="page"
+         style="display:none;">
 
-        <h1>Jenkins Pipeline</h1>
+        <h1>Jenkins Builds</h1>
 
-        <div class="logs">
-
-            <p>Build #101 : SUCCESS</p>
-
-            <p>Build #102 : SUCCESS</p>
-
-            <p>Build #103 : FAILED</p>
+        <div class="cards" id="jenkinsBuilds">
 
         </div>
 
     </div>
 
-    <div id="logs" class="page" style="display:none;">
+    <div id="logs"
+         class="page"
+         style="display:none;">
 
-        <h1>System Logs</h1>
+        <h1>Live Logs</h1>
 
-        <div class="logs">
-
-            <p>[INFO] Docker started</p>
-
-            <p>[INFO] Jenkins deployed build</p>
-
-            <p>[WARNING] High CPU Usage</p>
+        <div class="logs" id="liveLogs">
 
         </div>
 

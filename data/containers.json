@@ -1,0 +1,27 @@
+[
+  {
+    "name": "deploypulse-frontend",
+    "status": "Up 5 seconds",
+    "ports": "0.0.0.0:80->80/tcp, [::]:80->80/tcp"
+  },
+  {
+    "name": "deploypulse-backend",
+    "status": "Up 5 seconds",
+    "ports": "0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp"
+  },
+  {
+    "name": "prometheus",
+    "status": "Up 5 seconds",
+    "ports": "0.0.0.0:9090->9090/tcp, [::]:9090->9090/tcp"
+  },
+  {
+    "name": "grafana",
+    "status": "Up 5 seconds",
+    "ports": "0.0.0.0:3001->3000/tcp, [::]:3001->3000/tcp"
+  },
+  {
+    "name": "node-exporter",
+    "status": "Up 5 seconds",
+    "ports": "0.0.0.0:9100->9100/tcp, [::]:9100->9100/tcp"
+  }
+]
